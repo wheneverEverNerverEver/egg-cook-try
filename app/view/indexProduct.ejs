@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('header'); -%>
+  </head>
+
+  <body>
+    <%- include('menu',{order: "3" }); -%>
+    <h4 class="center grey">
+      hello <%= data %>请上传包含管家婆商品编码等的Excel文件幷确保第一行是表头
+    </h4>
+    <div class="canner" data-token="<%= token %>">
+      <div class="sunnyDayCannery">
+        <div>
+          <div class="chanpin mubanCan">
+            <input name="fileNeed1" type="file" id="fileNeed1" accept=".xls,.xlsx" />
+            <h3>管家婆导入</h3>
+            <h2 class="error center "></h2>
+          </div>
+         
+        </div>
+        <div>
+          <div class="chanpin">
+            <input name="fileNeed2" type="file" id="fileNeed2" accept=".xls,.xlsx" />
+            <h3>有赞导入</h3>
+            <h2 class="error center "></h2>
+          </div>
+          
+        </div>
+      </div>
+      <div style="width:100%;margin-bottom:50px">
+        <span class="submitButton fileNeedSubmit" style="display: block;">上传排序文件</span>
+        <div class="download" style="opacity: 0">
+        <a href="/public/download/exportConversion/new物价管理.xls"
+          >下载<span class="fileNeedSubmitAfter"></span
+        ></a>
+      </div>
+      </div>
+      <div class="sunnyDayCannery">
+        <div>
+          <div class="chanpin mubanCan">
+            <input name="file" type="file" id="fileMuban" accept=".xls,.xlsx" />
+            <h3>管家婆单据模板导入</h3>
+            <h2 class="error center muban"></h2>
+          </div>
+          <span class="submitButton mubanExcelButtom">上传模板</span>
+        </div>
+        <div>
+          <div class="chanpin">
+            <input name="file" type="file" id="file3" accept=".xls,.xlsx" />
+            <h3>商品Excel文件</h3>
+            <h2 class="error center productReeor"></h2>
+          </div>
+          <span class="submitButton productButtom">上传商品</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="meTableCan">
+      <div class="download">
+        <a href="/public/download/库存查询new.xls">下载</a>
+      </div>
+      <table
+        id="meTableProduct"
+        class="display ui celled table"
+        style="width: 100%"
+      >
+        <thead>
+          <tr>
+            <th>商品编码</th>
+            <th>商品名称</th>
+            <th>管家婆商品编码</th>
+            <th>管家婆商品名称</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class="meTableCan">
+   
+        <div class="chanpin">
+          <input name="file" type="file" id="fileConstrast" accept=".xls,.xlsx" />
+          <h3>食享库存和现有库存查询文件的数据对比</h3>
+          <h2 class="error center productContrast"></h2>
+        </div>
+        <span class="submitButton productContrastButtom">上传库存文件</span>
+      </div>
+    </div>
+  </div>
+  <div class="meTableCan">
+    <table
+      id="meTableProductSuccess"
+      class="display ui celled table"
+      style="width: 100%"
+    >
+      <thead>
+        <tr>
+          <th>编码</th>
+          <th>商品名称</th>
+          <th>管家婆商品名称</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="meTableCan">
+    <table
+      id="meTableProductFail"
+      class="display ui celled table"
+      style="width: 100%"
+    >
+      <thead>
+        <tr>
+          <th>编码</th>
+          <th>商品名称</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  </body>
+</html>

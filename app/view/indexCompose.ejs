@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('header'); -%>
+  </head>
+
+  <body>
+    <%- include('menu',{order: "2" }); -%>
+    <h4 class="center grey">
+      hello <%= data %>请上传包含管家婆模板文件幷确保第二行是表头
+    </h4>
+
+    <div class="canner" data-token="<%= token %>">
+      <div style="width: 100%">
+        <div class="chanpin">
+          <input name="file" type="file" id="fileSx" accept=".xls,.xlsx" />
+          <h3>食享订单导入</h3>
+          <h2 class="error center shixiang"></h2>
+        </div>
+        <span class="submitButton shixiangExcelButtom">上传食享订单</span>
+      </div>
+      <div class="download" style="opacity: 0">
+        <a href="/public/download/exportConversion/SalesOrderImport.xls"
+          >下载<span class="fileFrom"></span
+        ></a>
+      </div>
+    </div>
+
+    <div class="meTableCan">
+      <table
+        id="meTableProductConstrct"
+        class="display ui celled table"
+        style="width: 100%"
+      >
+        <thead>
+          <tr>
+            <th>编码</th>
+            <th>商品名称</th>
+            <th>管家婆商品名称</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('header'); -%>
+  </head>
+  <body>
+    <%- include('menu',{order: "1"}); -%>
+    <div class="canner inputDivCustom" data-token="<%= token %>">
+      <h4 class="center grey">
+        hello <%= data %>，请确保excel表格中第一行是表头
+        <h2 class="error center"></h2>
+      </h4>
+      <div class="inputDiv">
+        <input name="file" type="file" id="file1" accept=".xls,.xlsx" />
+        <h3>管家婆食享客户Excel文件</h3>
+      </div>
+      <div class="inputDiv">
+        <input name="file1" type="file" id="file2" accept=".xls,.xlsx" />
+        <h3>食享客户Excel文件</h3>
+      </div>
+      <span class="submitButton customButton">上传</span>
+    </div>
+    <div class="meTableCan">
+      <div class="download">
+        <a href="/public/download/客户档案new.xls">下载</a>
+      </div>
+      <table id="meTable" class="display ui celled table" style="width: 100%">
+        <thead>
+          <tr>
+            <th>食享id</th>
+            <th>食享名称</th>
+            <th>管家婆id</th>
+            <th>管家婆名称</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class="meTableCan">
+      <h2 class="center">比对失败的</h2>
+      <table
+        id="meTableFail"
+        class="display ui celled table"
+        style="width: 100%"
+      >
+        <thead>
+          <tr>
+            <th>管家婆id</th>
+            <th>管家婆名称</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </body>
+</html>
